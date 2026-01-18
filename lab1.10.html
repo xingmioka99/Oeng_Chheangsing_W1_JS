@@ -1,0 +1,30 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type = "text" id = "search-input" placeholder = "Search...">
+    <ul id = "items-list"></ul>
+</body>
+<script>
+    const itemsList = document.getElementById("items-list")
+    const searchInput = document.getElementById("search-input")
+    let items = ["book", "pen", "notebook", "pencil", "eraser", "backpack"]
+    function render(filterText){
+        itemsList.innerHTML = ""
+        filterText.forEach(item =>{
+            const li = document.createElement("li")
+            li.textContent = item
+            itemsList.appendChild(li)
+        }) 
+    }
+    render(items)
+    searchInput.addEventListener("input", ()=>{
+        let query = searchInput.value.toLowerCase()
+        let filteredItems = items.filter(item => item.toLowerCase().includes(query))
+        render(filteredItems)
+    })
+</script>
+</html>

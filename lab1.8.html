@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type = "text" placeholder = "Enter a fruit" id = "new-fruit">
+    <button id = "add-btn">Add Fruit</button>
+    <ul id = "fruit-list"></ul>
+</body>
+<script>
+    const fruitList = document.getElementById("fruit-list")
+    const addButton = document.getElementById("add-btn")
+    const newFruit = document.getElementById("new-fruit")
+    const fruits = ["Apple", "Banana", "Orange", "Mango", "Pineapple"]
+    function render(){
+        fruitList.innerHTML = ""
+        fruits.forEach(fruit =>{
+            const li = document.createElement("li")
+            li.textContent = fruit
+            fruitList.appendChild(li)
+        })
+    }
+    render()
+    addButton.addEventListener("click", () =>{
+        const fruit = newFruit.value
+        if(fruit !== ""){
+            fruits.push(fruit)
+            render()
+            newFruit.value = ""
+        }
+    })
+</script>
+</html>

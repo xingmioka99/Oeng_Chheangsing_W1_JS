@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type = "text" id = "name-input" placeholder = "Enter name">
+    <button id = "greet-btn">Greet</button>
+    <p id = "message"></p>
+</body>
+<script>
+    const input = document.getElementById("name-input")
+    const button = document.getElementById("greet-btn")
+    const message = document.getElementById("message")
+    button.addEventListener("click", ()=>{
+        const name = input.value
+        message.textContent = `Hello, ${name}!`
+        if(name == ""){
+            message.textContent = "please enter your name"
+            message.style.color = "red"
+        }else{
+            message.style.color = "black"
+        }
+    })
+
+</script>
+</html>
