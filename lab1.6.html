@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id = "card">
+        <h3 id = "user-name"></h3>
+        <p id = "user-role"></p>
+    </div>
+    <button id = "promote-btn">Promote to admin</button>
+</body>
+<script>
+    const username = document.getElementById("user-name")
+    const userrole = document.getElementById("user-role")
+    const promoteBtn = document.getElementById("promote-btn")
+    let user = {name : "John Dee", role : "user"}
+    function render(){
+        username.textContent = user.name
+        userrole.textContent = user.role
+    }
+    promoteBtn.addEventListener("click", ()=>{
+        user.role = "admin"
+        render()
+    })
+</script>
+</html>

@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id = "counter-view">0</h2>
+    <button id = "inc-btn">+1</button>
+</body>
+<script>
+    const counterView = document.getElementById("counter-view")
+    const incButton = document.getElementById("inc-btn")
+    let count = 0;
+    function render(){
+        counterView.textContent = count;
+    }
+    incButton.addEventListener("click", () =>{
+        count +=1
+        render();
+    })
+</script>
+</html>
